@@ -1,4 +1,7 @@
 public class Main {
+
+    //GitHub link: https://github.com/wembythegoat/RealLab2_AswinthSinnathamby.git
+
     public static void main(String[] args) {
         CourseGrades course = new CourseGrades();
 

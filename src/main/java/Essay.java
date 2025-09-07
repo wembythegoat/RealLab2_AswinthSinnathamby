@@ -1,9 +1,24 @@
+/**
+ * Determines the grade a student receives for an essay (The student's essay score can be up tp 100).
+ * Extends the GradedActivity class.
+ * Evaluates the essay based on four components: grammar, spelling, correct length, and content.
+ *
+ * @author Aswinth Sinnathamby
+ */
 public class Essay extends GradedActivity {
     private double grammar;
     private double spelling;
     private double correctLength;
     private double content;
 
+    /**
+     * Constructs an Essay object with individual component scores.
+     * Caps each score at its respective maximum value before calculating total.
+     * @param grammar
+     * @param spelling
+     * @param correctLength
+     * @param content
+     */
     public Essay(double grammar, double spelling, double correctLength, double content) {
         super(0);
 

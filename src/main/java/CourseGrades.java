@@ -1,3 +1,11 @@
+/**
+ * The CourseGrades class implements the Analyzable interface and manages
+ * a collection of graded activities for a course. It includes methods to
+ * set individual graded components, calculate the average score, and
+ * determine the highest and lowest scores.
+ *
+ * @author Aswinth Sinnathamby
+ */
 public class CourseGrades implements Analyzable {
     private GradedActivity[] grades;
 
@@ -5,22 +13,42 @@ public class CourseGrades implements Analyzable {
         grades = new GradedActivity[4];
     }
 
+    /**
+     * Sets the lab graded activity.
+     * @param Lab
+     */
     public void setLab(GradedActivity Lab) {
         grades[0] = Lab;
     }
 
+    /**
+     * Sets the Pass/Fail Exam graded activity.
+     * @param exam
+     */
     public void setPassFailExam(PassFailExam exam) {
         grades[1] = exam;
     }
 
+    /**
+     * Sets the Essay graded activity.
+     * @param essay
+     */
     public void setEssay(Essay essay) {
         grades[2] = essay;
     }
 
+    /**
+     * Sets the Final Exam graded activity
+     * @param finalExam
+     */
     public void setFinalExam(FinalExam finalExam) {
         grades[3] = finalExam;
     }
 
+    /**
+     * Calculates the returns the average score of all graded activities.
+     * @return Average score
+     */
     @Override
     public double getAverage() {
         double total = 0;
@@ -30,6 +58,10 @@ public class CourseGrades implements Analyzable {
         return total / grades.length;
     }
 
+    /**
+     * Finds and returns the graded activity with the highest score.
+     * @return GradedActivity with the highest score
+     */
     @Override
     public GradedActivity getHighest() {
         GradedActivity highest = grades[0];
@@ -41,6 +73,10 @@ public class CourseGrades implements Analyzable {
         return highest;
     }
 
+    /**
+     * Finds and returns the graded activity with the lowest score.
+     * @return GradedActivity with the lowest score
+     */
     @Override
     public GradedActivity getLowest() {
         GradedActivity lowest = grades[0];
@@ -52,6 +88,10 @@ public class CourseGrades implements Analyzable {
         return lowest;
     }
 
+    /**
+     * Returns a formatted string representation of all graded activities.
+     * @return String summary of course grades
+     */
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder();
